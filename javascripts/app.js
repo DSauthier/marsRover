@@ -6,6 +6,7 @@ function createMatrix(columns, rows) {
   return matrix;
 }
 
+var travelLog = [];
 
 // Rover Object Goes Here
 // ======================
@@ -59,60 +60,60 @@ function turnRight(rover){
 
   console.log("turnRight was called!");
   }
-function moveForward(rover){
-  switch (rover.direction) {
+function moveForward(rover1){
+  switch (rover1.direction) {
     case 'N':
-      rover.position[0] = rover.position[0] - 1;
+      rover1.position[0] = rover1.position[0] - 1;
       break;
 
     case 'E':
-      rover.position[1] = rover.position[1] + 1;
+      rover1.position[1] = rover1.position[1] + 1;
       break;
 
     case 'S':
-      rover.position[0] = rover.position[0] + 1;
+      rover1.position[0] = rover1.position[0] + 1;
       break;
 
     case 'W':
-      rover.position[1] = rover.position[1] - 1;
+      rover1.position[1] = rover1.position[1] - 1;
       break;
-  }
+  }}
   function moveBackwards(rover) {
-    switch (rover.direction) {
+    switch (rover1.direction) {
       case 'N':
-        rover.position[0] = rover.position[0] + 1;
+        rover1.position[0] = rover1.position[0] + 1;
         break;
 
       case 'E':
-        rover.position[1] = rover.position[1] - 1;
+        rover1.position[1] = rover1.position[1] - 1;
         break;
 
       case 'S':
-        rover.position[0] = rover.position[0] - 1;
+        rover1.position[0] = rover1.position[0] - 1;
         break;
 
       case 'W':
-        rover.position[1] = rover.position[1] + 1;
+        rover1.position[1] = rover1.position[1] + 1;
         break;
     }}
 
   oops('forward');
 
-  console.log(rover);
+  console.log(rover1);
 
   console.log("moveForward was called")
-}
+
 
 //==============================================//
 
       function oops(movement) {
-        if (rover.position[0] < 0 || rover.position[0] >= 10) {
+        if (rover1.position[0] < 0 || rover1.position[0] >= 10) {
           console.log('Oops! your reached the border, you cannot move ' + movement);
-          rover.position[0] = 0;
+          rover1.position[0] = 0;
         }
-        if (rover.position[1] < 0) {
+        if (rover1.position[1] < 0) {
           console.log('Oops! your reached the border, you cannot move ' + movement);
-          rover.position[1] = 0;
+          rover1.position[1] = 0;
         } else {
           RegisterTravelLogMovement();
         }
@@ -120,7 +121,7 @@ function moveForward(rover){
 
       function RegisterTravelLogMovement() {
         travelLog.push(
-          'Rover moved Forward, Rovers position is: ' + rover.position
+          'Rover moved Forward, Rovers position is: ' + rover1.position
         );
       }
 
@@ -129,5 +130,5 @@ function moveForward(rover){
           'Rover turned ' +
           turn +
           ', now Rovers direction is: ' +
-          rover.direction
+          rover1.direction
         )}
